@@ -1,5 +1,9 @@
 <a name="readme-top"></a>
 
+<!-- (urls) -->
+
+  [license-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/blob/main/LICENSE
+
 <!-- PROJECT HEADER -->
 <div align="center">
   <h3 align="center" name="project-title">
@@ -29,7 +33,7 @@ This library aims to provide extension methods which improve the readability and
 
 ### License
 
-Published under the `MIT License`. The license file can be found [here](https://github.com/mx-pl/ExtendedTypes_CSharp/blob/main/LICENSE).
+Published under the `MIT License`. The license file can be found [here][license-url].
 
 <p align="right">
   <a href="#readme-top">
