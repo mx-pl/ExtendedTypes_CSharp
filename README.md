@@ -70,7 +70,7 @@ Published under the `MIT License`. See the full [license file][license-url] for 
 ### Package Releases
 <a name="package-releases"></a>
 
-*none*
+* 1.0.0-beta *(Initial release; let's see if everything works.)*
 
 <p align="right">
   <a href="#readme-top">
