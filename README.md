@@ -86,7 +86,33 @@ Published under the `MIT License`. The license file can be found [here][license-
 ### Boolean
 <a name="boolean"></a>
 
-*to be added when implemented*
+This package provides a straightforward way to toggle (ie negate the value of) a boolean variable.
+
+```C#
+// Let's define a bool variable and set it to true.
+var myBool = true; 
+```
+
+#### Toggle()
+
+The extension method *Toggle()* negates the value of the instance without returning anything.
+ 
+```C#
+// Value of 'myBool' is 'true'.
+myBool.Toggle();
+// Value of 'myBool' is 'false'.
+```
+
+#### Toggled()
+
+The extension method *Toggled()* returns the negated value but does not change the variable itself.
+
+```C#
+// Value of 'myBool' is 'true'.
+var result = myBool.Toggled();
+// Value of 'myBool' is still 'true'.
+// Value of 'result' is 'false'.
+```
 
 <p align="right">
   <a href="#readme-top">
