@@ -46,7 +46,7 @@
 ### Motivation
 <a name="motivation"></a>
 
-While the negation operator (`!`) is concise, it is also easy to miss and sometimes has to be put in places where it obstructs or does not correspond with the natural reading flow.
+Even though the negation operator (`!`) is concise, it is also easy to miss and sometimes has to be put in places where it obstructs or does not align with the natural reading flow.
 
 This library aims to provide extension methods which improve the readability and straightforwardness of such statements—and in some cases there conciseness, too.
 
@@ -59,7 +59,7 @@ This library aims to provide extension methods which improve the readability and
 ### License
 <a name="license"></a>
 
-Published under the `MIT License`. The license file can be found [here][license-url].
+Published under the `MIT License`. See the full [license file][license-url] for more information.
 
 <p align="right">
   <a href="#readme-top">
