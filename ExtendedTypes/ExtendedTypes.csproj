@@ -1,26 +1,30 @@
 ﻿<Project Sdk="Microsoft.NET.Sdk">
 
-	<PropertyGroup>
-		<TargetFramework>net6.0</TargetFramework>
-		
-		<ImplicitUsings>enable</ImplicitUsings>
-		<Nullable>enable</Nullable>
-		<EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+  <PropertyGroup>
+    <TargetFramework>net6.0</TargetFramework>
 
-		<PackageId>mx-pl.ExtendedTypes</PackageId>
-		<Version>1.0.0-beta</Version>
-		<Authors>mx-pl</Authors>
-		<PackageLicenseExpression>MIT</PackageLicenseExpression>
-		<Title>ExtendedTypes</Title>
-		<Product>ExtendedTypes</Product>
-		<Description>A small C#/.NET library providing data type based utility methods—mainly for improved readability.</Description>
-		
-		<PackageProjectUrl>https://github.com/mx-pl/ExtendedTypes_CSharp</PackageProjectUrl>
-		<RepositoryUrl>https://github.com/mx-pl/ExtendedTypes_CSharp.git</RepositoryUrl>
-		<PackageReadmeFile>README.md</PackageReadmeFile>
-		
-		<PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
-	</PropertyGroup>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+    <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
+	<Deterministic>true</Deterministic>
+
+    <PackageId>mx-pl.ExtendedTypes</PackageId>
+    <Version>1.0.0-beta</Version>
+    <Authors>mx-pl</Authors>
+	<Copyright>Copyright (c) mx-pl 2023</Copyright>
+    <PackageLicenseExpression>MIT</PackageLicenseExpression>
+    <Title>ExtendedTypes</Title>
+    <Product>ExtendedTypes</Product>
+    <Description>A small C#/.NET library providing data type based utility methods—mainly for improved readability.</Description>
+	<PackageTags>utility;readability-improvements;bool-negation</PackageTags>
+
+    <PackageProjectUrl>https://github.com/mx-pl/ExtendedTypes_CSharp</PackageProjectUrl>
+    <RepositoryUrl>https://github.com/mx-pl/ExtendedTypes_CSharp.git</RepositoryUrl>
+	<RepositoryType>git</RepositoryType>
+    <PackageReadmeFile>README.md</PackageReadmeFile>
+	
+    <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
+  </PropertyGroup>
 
 	<ItemGroup>
 	  <None Include="..\README.md">
