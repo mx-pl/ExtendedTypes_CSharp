@@ -2,7 +2,9 @@
 
 <!-- (urls) -->
 
+  [changelog-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/blob/main/CHANGELOG.md
   [license-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/blob/main/LICENSE
+  [nuget-url]: https://www.nuget.org/packages/mx-pl.ExtendedTypes
 
 <!-- PROJECT HEADER -->
 <div align="center">
@@ -70,7 +72,11 @@ Published under the `MIT License`. See the full [license file][license-url] for 
 ### Package Releases
 <a name="package-releases"></a>
 
-* 1.0.0-beta *(Initial release; let's see if everything works.)*
+This library is published as a [package on NuGet][nuget-url].
+
+* Current release: `1.0.0` *(2023-12-18)*
+
+Information on what is new and on previous releases can be found in the [CHANGELOG][changelog-url]. An overview of current features can be found in the next section.
 
 <p align="right">
   <a href="#readme-top">
