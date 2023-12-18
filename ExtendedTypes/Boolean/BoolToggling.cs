@@ -11,6 +11,9 @@
 
 namespace ExtendedTypes.Boolean
 {
+    /// <summary>
+    /// A class encapsulating extension methods for straightforward and easily readable boolean negation.
+    /// </summary>
     public static class BoolToggling
     {
         /// <summary>
