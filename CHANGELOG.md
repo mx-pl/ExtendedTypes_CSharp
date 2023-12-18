@@ -16,9 +16,8 @@
 <details>
   <summary>Table Of Contents</summary>
   <ul>
-    <li>
-      <a href="#v_1-0-0">v1.0.0</a>
-    </li>
+    <li><a href="#v_1-0-0">v1.0.0</a></li>
+    <li><a href="#v_1-0-0_beta">v1.0.0-beta</a></li>
   </ul>
 </details>
 
@@ -27,7 +26,7 @@
 <!-- 1.0.0 -->
 ## v1.0.0
 <a name="v_1-0-0"></a>
-> 2023-12-17
+> 2023-12-18
 
 ### Features
 
@@ -35,7 +34,7 @@
 
 ### Testing
 
-* Add unit tests for methods *Toggle()* and *Toggled()*.
+* Add unit tests for methods `Toggle()` and `Toggled()`.
 
 ### Package
 
@@ -54,4 +53,14 @@
 <a name="v_1-0-0_beta"></a>
 > 2023-12-15
 
-* Initial release to see if everything works.
+_Initial release to see if everything works._
+
+### Features
+
+* Extension methods `Toggle()` and `Toggled()` for easily readable boolean negation.
+
+<p align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/&#x2191;-back-lightgrey" />
+  </a>
+</p>
