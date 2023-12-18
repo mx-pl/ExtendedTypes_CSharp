@@ -59,5 +59,35 @@ namespace TestSuite.Boolean
         }
 
         #endregion
+
+        #region Not()
+
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void Not_DoesNotChangeInstanceValue(bool initial)
+        {
+            var b = initial;
+
+            _ = b.Not();
+
+            // Value of 'b' should still be the same as that of 'initial'.
+            Assert.Equal(b, initial);
+        }
+
+        [Theory]
+        [InlineData(true)]
+        [InlineData(false)]
+        public void Not_Returns_NegatedInstanceValue(bool initial)
+        {
+            var b = initial;
+
+            var result = b.Not();
+
+            // Value of 'result' should be the negated value of 'initial'.
+            Assert.Equal(result, !initial);
+        }
+
+        #endregion
     }
 }
