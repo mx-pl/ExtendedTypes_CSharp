@@ -5,24 +5,26 @@
 
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
+
     <EnforceCodeStyleInBuild>True</EnforceCodeStyleInBuild>
-	<Deterministic>true</Deterministic>
+    <Deterministic>True</Deterministic>
+    <GenerateDocumentationFile>True</GenerateDocumentationFile>
 
     <PackageId>mx-pl.ExtendedTypes</PackageId>
-    <Version>1.0.0</Version>
+    <Version>1.1.0</Version>
     <Authors>mx-pl</Authors>
-	<Copyright>Copyright (c) mx-pl 2023</Copyright>
+    <Copyright>Copyright (c) mx-pl 2024</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Title>ExtendedTypes</Title>
     <Product>ExtendedTypes</Product>
     <Description>A small C#/.NET library providing data type based utility methods—mainly for improved readability.</Description>
-	<PackageTags>utility;readability-improvements;bool-negation</PackageTags>
+    <PackageTags>utility;readability-improvements;bool-negation;string-empty-checks</PackageTags>
 
     <PackageProjectUrl>https://github.com/mx-pl/ExtendedTypes_CSharp</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mx-pl/ExtendedTypes_CSharp.git</RepositoryUrl>
-	<RepositoryType>git</RepositoryType>
+    <RepositoryType>git</RepositoryType>
     <PackageReadmeFile>NuGet-README.md</PackageReadmeFile>
-	
+
     <PackageRequireLicenseAcceptance>True</PackageRequireLicenseAcceptance>
   </PropertyGroup>
 

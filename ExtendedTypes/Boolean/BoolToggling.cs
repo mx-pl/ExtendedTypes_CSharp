@@ -11,6 +11,9 @@
 
 namespace ExtendedTypes.Boolean
 {
+    /// <summary>
+    /// A class encapsulating extension methods for straightforward and easily readable boolean negation.
+    /// </summary>
     public static class BoolToggling
     {
         /// <summary>
@@ -29,5 +32,12 @@ namespace ExtendedTypes.Boolean
         {
             return !b;
         }
+
+        /// <summary>
+        /// Returns the negated value of this instance without changing the instance itself.
+        /// </summary>
+        /// <remarks>An alias for Toggled—functionality is the same.</remarks>
+        /// <returns>The negated value of this instance.</returns>
+        public static bool Not(this bool b) => Toggled(b);
     }
 }
