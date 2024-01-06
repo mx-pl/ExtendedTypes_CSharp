@@ -90,7 +90,7 @@ Published under the `MIT License`. See the full [license file][license-url] for 
 
 This library is published as a [package on NuGet][nuget-url].
 
-* Current release: `1.0.0` *(2023-12-18)*
+* Current release: `1.1.0` *(2024-01-06)*
 
 Information on what is new and on previous releases can be found in the [CHANGELOG][changelog-url]. An overview of current features can be found in the next section.
 
