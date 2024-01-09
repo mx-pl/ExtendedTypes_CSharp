@@ -9,8 +9,6 @@
  ---------------------------------------------------------------------------
 */
 
-using ExtendedTypes.String;
-
 namespace TestSuite.String
 {
     public class StringEmptyChecksUnitTests
