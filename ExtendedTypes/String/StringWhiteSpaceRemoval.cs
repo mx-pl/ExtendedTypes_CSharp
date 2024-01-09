@@ -21,7 +21,7 @@ namespace ExtendedTypes.String
     {
         #region Public Extension Methods
 
-        public static string CondenceWhiteSpace(this string str, string? replacement = " ")
+        public static string CondenseWhiteSpace(this string str, string? replacement = " ")
         {
             /* --- Input Validation --- */
             if (str is null) throw new ArgumentNullException(nameof(str));
@@ -40,7 +40,7 @@ namespace ExtendedTypes.String
             }
             else
             {
-                // We do not replace the whitespace characters but condence sequences of the same kind
+                // We do not replace the whitespace characters but condense sequences of the same kind
                 // of whitespace character to just one of its kind.
 
                 // I.e. when building our result string we will only include non-whitespace characters
@@ -48,10 +48,10 @@ namespace ExtendedTypes.String
 
                 // Note that in any case:
                 //
-                //  condencedString.Length <= str.Length
+                //  condensedString.Length <= str.Length
                 //      (because we are going to remove characters)
 
-                var condencedString = new StringBuilder(str[0], str.Length);
+                var condensedString = new StringBuilder(str[0], str.Length);
 
                 char previous = str[0];
 
@@ -59,12 +59,12 @@ namespace ExtendedTypes.String
                 {
                     if (!char.IsWhiteSpace(str[i]) || str[i] != previous)
                     {
-                        condencedString.Append(str[i]);
+                        condensedString.Append(str[i]);
                         previous = str[i];
                     }
                 }
 
-                return condencedString.ToString();
+                return condensedString.ToString();
             }
         }
 
@@ -101,7 +101,7 @@ namespace ExtendedTypes.String
 
             /* --- Condense Whitespace --- */
 
-            return inputSpan.ToString().CondenceWhiteSpace(separator.ToString());
+            return inputSpan.ToString().CondenseWhiteSpace(separator.ToString());
         }
 
         #endregion

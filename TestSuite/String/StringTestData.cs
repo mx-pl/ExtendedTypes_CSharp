@@ -13,6 +13,14 @@ namespace TestSuite.String
 {
     internal static class StringTestData
     {
+        public static IEnumerable<object[]> AllWhiteSpaceChars()
+        {
+            foreach (char c in WhiteSpaceCharacters.All)
+            {
+                yield return new object[] { c };
+            }
+        }
+
         public static IEnumerable<object?[]> TestStrings = new[]
         {
             new object?[] {null},
