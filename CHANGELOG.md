@@ -16,12 +16,41 @@
 <details>
   <summary>Table Of Contents</summary>
   <ul>
+    <li><a href="#v_1-1-0">v1.1.0</a></li>
     <li><a href="#v_1-0-0">v1.0.0</a></li>
     <li><a href="#v_1-0-0_beta">v1.0.0-beta</a></li>
   </ul>
 </details>
 
 <br/>
+
+<!-- 1.1.0 -->
+## v1.1.0
+<a name="v_1-1-0"></a>
+> 2024-01-06
+
+### Features
+
+* Add extension methods for concise string empty checks:
+  * `IsNullOrEmpty()` and `IsNullOrWhiteSpace()` (mirroring string's pre-existing regular methods of the same name).
+  * Their negated versions: `IsNotNullOrEmpty()` and `IsNotNullOrWhiteSpace()`.
+* Add `Not()` as an alias for `Toggled()`.
+
+### Testing
+
+* Add unit tests for new string based methods.
+* Add unit tests for method `Not()`.
+
+### Package
+
+* Let documentation files be generated when packing (so IntelliSense can display the method descriptions). 
+
+<p align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/&#x2191;-back-lightgrey" />
+  </a>
+</p>
+
 
 <!-- 1.0.0 -->
 ## v1.0.0
