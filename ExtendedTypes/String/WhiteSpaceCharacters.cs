@@ -1,6 +1,6 @@
 ﻿/*
  ---------------------------------------------------------------------------
-  Copyright 'c) 2024 mx-pl
+  Copyright (c) 2024 mx-pl
 
   Licensed under the MIT License.
 
