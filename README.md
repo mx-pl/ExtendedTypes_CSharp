@@ -13,6 +13,10 @@
   <h3 align="center" name="project-title">
     Extended Types (Library)
   </h3>
+  <div>
+    <a href="https://www.nuget.org/packages/mx-pl.ExtendedTypes"><img alt="NuGet Version" src="https://img.shields.io/nuget/v/mx-pl.ExtendedTypes?style=flat&logo=nuget&logoColor=blue"></a>
+    <a href="https://github.com/mx-pl/ExtendedTypes_CSharp/blob/main/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/mx-pl/ExtendedTypes_CSharp?style=flat"></a>
+  </div>
   <p align="center" name="project-description">
     A small C#/.NET library providing data type based utility methods—mainly for improved readability.
   </p>
