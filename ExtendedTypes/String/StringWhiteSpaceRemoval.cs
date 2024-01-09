@@ -17,7 +17,7 @@ namespace ExtendedTypes.String
     /// <summary>
     /// A class encapsulating extension methods for easy removal of whitespace characters from strings.
     /// </summary>
-    public static class StringShrinking
+    public static class StringWhiteSpaceRemoval
     {
         #region Public Extension Methods
 
