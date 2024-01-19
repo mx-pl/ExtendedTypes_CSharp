@@ -50,66 +50,7 @@ namespace ExtendedTypes.String
         #endregion
 
 
-        #region CondenseWhiteSpace()
-
-        #endregion
-
-
-        /// <summary>
-        /// Replaces all sequences of whitespace characters in this instance with the specified replacement string.
-        /// If no replacement is specified, 
-        /// </summary>
-        /// <param name="str">The string instance this method is invoked on.</param>
-        /// <param name="replacement"></param>
-        /// <returns></returns>
-        /// <exception cref="ArgumentNullException"></exception>
-        public static string CondenseWhiteSpace(this string str, string? replacement = " ")
-        {
-            /* --- Input Validation --- */
-            if (str is null) throw new ArgumentNullException(nameof(str));
-
-            if (str.Length == 0) return str;
-
-            /* --- Replacing all sequences of whitespace --- */
-            if (replacement is not null)
-            {
-                return Regex.Replace(
-                    str,
-                    @"\s+",
-                    replacement.Length > 1
-                    ? replacement[0].ToString()
-                    : replacement);
-            }
-            else
-            {
-                // We do not replace the whitespace characters but condense sequences of the same kind
-                // of whitespace character to just one of its kind.
-
-                // I.e. when building our result string we will only include non-whitespace characters
-                // and whitespace characters which are different from their preceding one.
-
-                // Note that in any case:
-                //
-                //  condensedString.Length <= str.Length
-                //      (because we are going to remove characters)
-
-                var condensedString = new StringBuilder(str[0], str.Length);
-
-                char previous = str[0];
-
-                for (int i = 1; i < str.Length; i++)
-                {
-                    if (!char.IsWhiteSpace(str[i]) || str[i] != previous)
-                    {
-                        condensedString.Append(str[i]);
-                        previous = str[i];
-                    }
-                }
-
-                return condensedString.ToString();
-            }
-        }
-
+        #region Shrink()
 
         public static string Shrink(this string str) => Shrink(str, ' ', true);
 
@@ -141,9 +82,11 @@ namespace ExtendedTypes.String
                 inputSpan = trimmedSpan;
             }
 
-            /* --- Condense Whitespace --- */
+            /* --- Squash Whitespace --- */
 
-            return inputSpan.ToString().CondenseWhiteSpace(separator.ToString());
+            return inputSpan.ToString().SquashWhiteSpace(separator);
         }
+
+        #endregion
     }
 }
