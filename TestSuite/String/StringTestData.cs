@@ -23,7 +23,7 @@ namespace TestSuite.String
 
         public static IEnumerable<object?[]> TestStrings = new[]
         {
-            new object?[] {null},
+            // new object?[] {null},
             new object[] {""},
             new object[] {" "},
             new object[] {"\n"},

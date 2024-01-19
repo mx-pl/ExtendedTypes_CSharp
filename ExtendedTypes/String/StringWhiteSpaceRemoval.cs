@@ -19,8 +19,50 @@ namespace ExtendedTypes.String
     /// </summary>
     public static class StringWhiteSpaceRemoval
     {
-        #region Public Extension Methods
+        #region SquashWhiteSpace()
 
+        /// <summary>
+        /// Replaces all sequences of whitespace characters in this <see cref="string"/> with a single space.
+        /// </summary>
+        /// <remarks>Optionally, an alternative <paramref name="replacement"/> can be specified.
+        /// If <paramref name="replacement"/> is set to <see langword="null"/>, whitespace is removed entirely (replaced by "").</remarks>
+        /// <param name="str">The string instance this method is invoked on.</param>
+        /// <param name="replacement">The char whitespace sequences are replaced by.</param>
+        /// <returns>This string with all sequences of whitespace characters replaced by the specified <see cref="char"/> (or removed entirely).</returns>
+        /// <exception cref="ArgumentNullException"></exception>
+        public static string SquashWhiteSpace(this string str, char? replacement = '\u0020')
+        {
+            /* --- Input Validation --- */
+
+            if (str is null) throw new ArgumentNullException(nameof(str));
+
+            if (str.Length == 0) return str; // Nothing to do.
+
+
+            /* --- Replacing all sequences of whitespace --- */
+
+            var replacementString = new StringBuilder();
+            replacementString.Append(replacement); // If 'replacement' is null, StringBuilder remains unchanged (i.e. empty).
+
+            return Regex.Replace(str, @"\s+", replacementString.ToString());
+        }
+
+        #endregion
+
+
+        #region CondenseWhiteSpace()
+
+        #endregion
+
+
+        /// <summary>
+        /// Replaces all sequences of whitespace characters in this instance with the specified replacement string.
+        /// If no replacement is specified, 
+        /// </summary>
+        /// <param name="str">The string instance this method is invoked on.</param>
+        /// <param name="replacement"></param>
+        /// <returns></returns>
+        /// <exception cref="ArgumentNullException"></exception>
         public static string CondenseWhiteSpace(this string str, string? replacement = " ")
         {
             /* --- Input Validation --- */
@@ -103,7 +145,5 @@ namespace ExtendedTypes.String
 
             return inputSpan.ToString().CondenseWhiteSpace(separator.ToString());
         }
-
-        #endregion
     }
 }
