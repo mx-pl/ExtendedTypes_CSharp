@@ -54,7 +54,7 @@ namespace ExtendedTypes.String
 
         /// <summary>
         /// Removes all whitespace from the start and end of the current <see cref="string"/>. Additionally,
-        /// all remaining occurrances of whitespace are replaced with a single space.
+        /// all remaining sequences of whitespace are replaced with a single space.
         /// </summary>
         /// <param name="str">The string instance this method is invoked on.</param>
         /// <returns>
@@ -65,7 +65,7 @@ namespace ExtendedTypes.String
 
         /// <summary>
         /// Removes all whitespace from the start and end of the current <see cref="string"/>. Additionally,
-        /// all remaining occurrances of whitespace are replaced with the <paramref name="separator"/> <see cref="char"/>.
+        /// all remaining sequences of whitespace are replaced with the <paramref name="separator"/> <see cref="char"/>.
         /// </summary>
         /// <param name="str">The string instance this method is invoked on.</param>
         /// <param name="separator">The <see cref="char"/> used to replace the whitespace.</param>
