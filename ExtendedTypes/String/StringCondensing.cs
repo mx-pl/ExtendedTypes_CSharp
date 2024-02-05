@@ -14,20 +14,23 @@ using System.Text;
 namespace ExtendedTypes.String
 {
     /// <summary>
-    /// 
+    /// Options specifing which kinds of <see cref="char"/> are considered when condensing.
     /// </summary>
     public enum StringCondenseOptions
     {
         /// <summary>
-        /// 
+        /// All kinds of characters are condensed.
         /// </summary>
         Default,
+
         /// <summary>
         /// Only whitespace characters are condensed.
         /// </summary>
         OnlyWhiteSpace,
+
         /// <summary>
-        /// Consecutive ?? The first character of each sequence retains its case in the result string.
+        /// The upper- and lowercase form of a <see cref="char"/> are treated as identical.
+        /// Nevertheless, the leading character of each sequence retains its case in the result.
         /// </summary>
         IgnoreCase
     }
@@ -38,13 +41,13 @@ namespace ExtendedTypes.String
     public static class StringCondensing
     {
         /// <summary>
-        /// Replaces consecutive occurrences of the same <see cref="char"/> with a single instance of that character.
+        /// Replaces all sequences of identical <see cref="char"/>s within this <see cref="string"/> with a single instance of that character.
         /// </summary>
-        /// <remarks>Note: Different kinds of whitespace (space, tab, etc.) are each represented by their own char and,
-        /// therefore, not treated as equal.</remarks>
+        /// <remarks>Note: Different types of whitespace (space, tab, etc.) are represented by different chars and,
+        /// therefore, treated as distinct.</remarks>
         /// <param name="str">The string instance this method is invoked on.</param>
-        /// <param name="options"></param>
-        /// <returns></returns>
+        /// <param name="options">Options specifing which chars shall be considered for condensing.</param>
+        /// <returns>This <see cref="string"/> with all sequences of identical chars replaced with just one each.</returns>
         /// <exception cref="ArgumentNullException"></exception>
         public static string Condense(this string str, StringCondenseOptions options = StringCondenseOptions.Default)
         {
@@ -54,17 +57,17 @@ namespace ExtendedTypes.String
             if (str.Length == 0) return str; // Nothing to do.
 
 
-            /* --- Condense Sequences of Same Char --- */
+            /* --- Condense Sequences of Identical Chars --- */
 
             // We condense sequences of the same character to just one of its kind.
 
-            // I.e. when building our result string we will only include characters
-            // which differ from their preceding one.
+            // In other words, when we build our result string, we will only include those chars
+            // that differ from their preceding one.
 
             // In any case:
             // ¬ The first char in the string will be included;
             // ¬ condensedString.Length <= str.Length
-            //      (because we are going to remove characters).
+            //      (because we are (potentially) going to remove characters).
             var condensedString = new StringBuilder(str.Length);
             condensedString.Append(str[0]);
 
@@ -84,10 +87,14 @@ namespace ExtendedTypes.String
                 }
 
                 // If IgnoreCase option is set, all chars are converted to lower-case before comparison.
-                if (options == StringCondenseOptions.IgnoreCase && char.ToLower(str[i]) != previous)
+                if (options == StringCondenseOptions.IgnoreCase)
                 {
-                    condensedString.Append(str[i]);
-                    previous = char.ToLower(str[i]);
+                    if (char.ToLower(str[i]) != previous)
+                    {
+                        condensedString.Append(str[i]); // Retain case of first char in sequence.
+                        previous = char.ToLower(str[i]);
+                    }
+
                     continue;
                 }
 

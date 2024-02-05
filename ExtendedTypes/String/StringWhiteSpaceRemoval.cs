@@ -28,7 +28,7 @@ namespace ExtendedTypes.String
         /// If <paramref name="replacement"/> is set to <see langword="null"/>, whitespace is removed entirely (replaced by "").</remarks>
         /// <param name="str">The string instance this method is invoked on.</param>
         /// <param name="replacement">The char whitespace sequences are replaced by.</param>
-        /// <returns>This string with all sequences of whitespace characters replaced by the specified <see cref="char"/> (or removed entirely).</returns>
+        /// <returns>This string with all sequences of whitespace characters replaced by a space, the specified <see cref="char"/> or removed entirely.</returns>
         /// <exception cref="ArgumentNullException"></exception>
         public static string SquashWhiteSpace(this string str, char? replacement = '\u0020')
         {
@@ -54,23 +54,23 @@ namespace ExtendedTypes.String
 
         /// <summary>
         /// Removes all whitespace from the start and end of the current <see cref="string"/>. Additionally,
-        /// all remaining occurrances of whitespace are replaced by the SPACE <see cref="char"/>.
+        /// all remaining occurrances of whitespace are replaced with a single space.
         /// </summary>
         /// <param name="str">The string instance this method is invoked on.</param>
         /// <returns>
-        /// A <see cref="string"/> with no leading or trailing whitespace and where all sequences of non-whitespace characters
+        /// A <see cref="string"/> with no leading or trailing whitespace, whose sequences of non-whitespace characters
         /// are kept apart by single space chars.
         /// </returns>
         public static string Shrink(this string str) => Shrink(str, ' ', true);
 
         /// <summary>
         /// Removes all whitespace from the start and end of the current <see cref="string"/>. Additionally,
-        /// all remaining occurrances of whitespace are replaced by the <paramref name="separator"/> <see cref="char"/>.
+        /// all remaining occurrances of whitespace are replaced with the <paramref name="separator"/> <see cref="char"/>.
         /// </summary>
         /// <param name="str">The string instance this method is invoked on.</param>
         /// <param name="separator">The <see cref="char"/> used to replace the whitespace.</param>
         /// <returns>
-        /// A <see cref="string"/> with no leading or trailing whitespace and where all sequences of non-whitespace characters
+        /// A <see cref="string"/> with no leading or trailing whitespace, whose sequences of non-whitespace characters
         /// are kept apart by the specified <paramref name="separator"/>.
         /// </returns>
         public static string Shrink(this string str, char separator) => Shrink(str, separator, true);
