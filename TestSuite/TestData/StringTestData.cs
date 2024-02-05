@@ -9,7 +9,7 @@
  ---------------------------------------------------------------------------
 */
 
-namespace TestSuite.String
+namespace TestSuite.TestData
 {
     internal static class StringTestData
     {
@@ -21,9 +21,8 @@ namespace TestSuite.String
             }
         }
 
-        public static IEnumerable<object?[]> TestStrings = new[]
+        public static IEnumerable<object[]> TestStrings = new[]
         {
-            // new object?[] {null},
             new object[] {""},
             new object[] {" "},
             new object[] {"\n"},
@@ -31,7 +30,8 @@ namespace TestSuite.String
             new object[] {"\t  "},
             new object[] {"fooBar"},
             new object[] {"foo bar"},
-            new object[] {"\tfoo bar"}
+            new object[] {"\tfoo bar"},
+            new object[] {" \tfoO bAar "}
         };
     }
 }

@@ -9,6 +9,8 @@
  ---------------------------------------------------------------------------
 */
 
+using TestSuite.TestData;
+
 namespace TestSuite.String
 {
     public class StringSquashingUnitTests
@@ -26,14 +28,16 @@ namespace TestSuite.String
             {
                 string? nullString = null;
 
-                // Pretending 'nullString' is not null here.
+                // Pretending 'nullString' is not null here to trigger Exception.
                 nullString!.SquashWhiteSpace();
             });
         }
 
+        #region Whitespace Removal / Replaceing
+
         [Theory]
         [MemberData(nameof(StringTestData.TestStrings), MemberType = typeof(StringTestData))]
-        public void SquashWhiteSpace_ReplacesAllWhiteSpaceWithSingleSpace_ByDefault(string testString)
+        public void SquashWhiteSpace_ReplacesAllWhiteSpaceWithASingleSpace_ByDefault(string testString)
         {
             var squashedString = testString.SquashWhiteSpace();
 
@@ -49,6 +53,7 @@ namespace TestSuite.String
         {
             var squashedString = testString.SquashWhiteSpace(null);
 
+            // No whitespace left.
             Assert.DoesNotMatch(@"\s", squashedString);
         }
 
@@ -64,33 +69,39 @@ namespace TestSuite.String
             Assert.DoesNotMatch(@"[£]{2,}", squashedString);
         }
 
+        #endregion
+
+        #region Integrity of Non-Whitespace Charaters
+
         [Theory]
         [MemberData(nameof(StringTestData.TestStrings), MemberType = typeof(StringTestData))]
         public void SquashWhiteSpace_DoesNotChangeNonWhiteSpaceCharacters(string testString)
         {
-            var testStringWithoutWhiteSpace =
+            var testString_WithoutAnyWhiteSpace =
                 string.Concat(testString.Where(c => !char.IsWhiteSpace(c)));
 
             // --- Default ---
-            var squashedStringDefault = testString.SquashWhiteSpace();
-            var squashedStringDefaultWithoutSpace =
-                string.Concat(squashedStringDefault.Where(c => c != '\u0020'));
+            var squashedString_Default = testString.SquashWhiteSpace();
+            var squashedString_Default_WithoutSpace =
+                string.Concat(squashedString_Default.Where(c => c != '\u0020'));
 
-            Assert.Equal(testStringWithoutWhiteSpace, squashedStringDefaultWithoutSpace);
+            Assert.Equal(testString_WithoutAnyWhiteSpace, squashedString_Default_WithoutSpace);
 
 
             // --- Replacement char null ---
-            var squashedStringNull = testString.SquashWhiteSpace(null);
+            var squashedString_ReplacementNull = testString.SquashWhiteSpace(null);
 
-            Assert.Equal(testStringWithoutWhiteSpace, squashedStringNull);
+            Assert.Equal(testString_WithoutAnyWhiteSpace, squashedString_ReplacementNull);
 
 
             // --- Replacement char specified ---
-            var squashedStringCharSpecified = testString.SquashWhiteSpace('£');
-            var squashedStringSpecifiedCharRemoved =
-                string.Concat(squashedStringCharSpecified.Where(c => c != '£'));
+            var squashedString_CharSpecified = testString.SquashWhiteSpace('£');
+            var squashedString_SpecifiedCharRemoved =
+                string.Concat(squashedString_CharSpecified.Where(c => c != '£'));
 
-            Assert.Equal(testStringWithoutWhiteSpace, squashedStringSpecifiedCharRemoved);
+            Assert.Equal(testString_WithoutAnyWhiteSpace, squashedString_SpecifiedCharRemoved);
         }
+
+        #endregion
     }
 }

@@ -28,7 +28,7 @@ namespace TestSuite.String
             {
                 string? nullString = null;
 
-                // Pretending 'nullString' is not null here.
+                // Pretending 'nullString' is not null here to trigger Exception.
                 nullString!.Condense();
             });
         }
@@ -39,13 +39,13 @@ namespace TestSuite.String
         #region Option: Default
 
         [Fact]
-        public void Condense_ReturnsStringThatDoesNotContainConsecutiveOccurrancesOfSameChar_ByDefault()
+        public void Condense_ReturnsStringThatDoesNotContainSequencesOfSameChar_ByDefault()
         {
-            string testString = "fooBar   455.\t\t";
+            string testString = "fOooBaAr   455.\t\t";
 
             var condensedString = testString.Condense();
 
-            Assert.DoesNotMatch(@"(\s\S)\1", condensedString);
+            Assert.DoesNotMatch(@"([\s\S])\1", condensedString);
         }
 
         #endregion
@@ -54,29 +54,44 @@ namespace TestSuite.String
         #region Option: OnlyWhiteSpace
 
         [Fact]
-        public void Condense_ReturnsStringThatDoesNotContainConsecutiveOccurrancesOfSameWhiteSpace_IfOptionOnlyWhiteSpace()
+        public void Condense_ReturnsStringThatDoesNotContainSequencesOfSameWhiteSpace_IfOptionOnlyWhiteSpaceSet()
         {
-            string testString = "fooBar   455.\t\t";
+            string testString = "fOooBaAr   455.\t\t";
 
             var condensedString = testString.Condense(StringCondenseOptions.OnlyWhiteSpace);
 
-            Assert.DoesNotMatch(@"(\sS)\1", condensedString);
+            Assert.DoesNotMatch(@"(\s)\1", condensedString);
         }
 
         [Fact]
-        public void Condense_DoesNotChangeNonWhiteSpaceCharacters_IfOptionOnlyWhiteSpace()
+        public void Condense_DoesNotChangeNonWhiteSpaceCharacters_IfOptionOnlyWhiteSpaceSet()
         {
-            string testString = "fooBar   455.\t\t";
-            var testStringWithoutWhiteSpace =
+            string testString = "fOooBaAr   455.\t\t";
+            var testString_WithoutWhiteSpace =
                 string.Concat(testString.Where(c => !char.IsWhiteSpace(c)));
 
             var condensedString = testString.Condense(StringCondenseOptions.OnlyWhiteSpace);
-            var condensedStringWithoutWhiteSpace =
+            var condensedString_WithoutWhiteSpace =
                 string.Concat(condensedString.Where(c => !char.IsWhiteSpace(c)));
 
-            Assert.Equal(testStringWithoutWhiteSpace, condensedStringWithoutWhiteSpace);
+            Assert.Equal(testString_WithoutWhiteSpace, condensedString_WithoutWhiteSpace);
         }
 
+        #endregion
+
+
+        #region Option: IgnoreCase
+
+        [Fact]
+        public void Condense_ReturnsStringThatDoesNotContainSequencesOfSameCharUpperOrLowerForm_IfOptionIgnoreCaseSet()
+        {
+            string testString = "fOooBaAr   455.\t\t";
+
+            var condensedString = testString.Condense(StringCondenseOptions.IgnoreCase);
+            var condensedString_ToLower = condensedString.ToLower();
+
+            Assert.DoesNotMatch(@"([\s\S])\1", condensedString_ToLower);
+        }
 
         #endregion
     }
