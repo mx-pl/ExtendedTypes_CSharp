@@ -34,8 +34,8 @@
 
 * Add extension methods for quick whitespace removal from strings:
   * `SquashWhiteSpace()`
-  * `Shrink()`.
-* Add extension method `Condense()` for easy compression of sequences of identical chars in strings.
+  * `Shrink()`
+* Add extension method `Condense()` for easy shortening of sequences of identical chars in strings.
 
 ### Testing
 

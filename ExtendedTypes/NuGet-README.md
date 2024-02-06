@@ -21,9 +21,8 @@ This library provides some extension methods to simplify their usage.
 
 ## Features
 
-— An overview of all current features is also available in the repo's *Wiki* over on [GitHub](https://github.com/mx-pl/ExtendedTypes_CSharp/wiki). —
+— An overview may also be found in the repository's *Wiki* on [GitHub](https://github.com/mx-pl/ExtendedTypes_CSharp/wiki). —
 
-Nevertheless, for your convenience, here is the full rundown:
 ### Boolean
 
 This package provides a straightforward way to toggle (i.e. negate the value of) a boolean variable.
@@ -113,7 +112,7 @@ var myString = "foo···bar\n";
 
 #### SquashWhiteSpace()
 
-The extension method *SquashWhiteSpace()* returns the string with all sequences of whitespace characters replaced with a single space char. Optionally, an alternative replacement can be specified.
+The extension method *SquashWhiteSpace()* returns the string with all sequences of whitespace characters replaced with a single SPACE char. Optionally, an alternative replacement can be specified.
 
 ```C#
 // By default, whitespace is replaced with a single space.
@@ -131,7 +130,7 @@ var squashedString_ReplacementIsNull = myString.SquashWhiteSpace(null);
 
 #### Shrink()
 
-The extension method *Shrink()* returns the string with all leading and trailing whitespace removed (i.e. trimmed) and all remaining sequences of whitespace characters replaced with a single space char.
+The extension method *Shrink()* returns the string with all leading and trailing whitespace removed (i.e. trimmed) and all remaining sequences of whitespace characters replaced with a single SPACE char.
 
 Optionally, an alternative replacement can be specified. In addition, the trimming can be disabled.
 

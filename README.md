@@ -113,7 +113,7 @@ This library provides extension methods for:
 * String
   * Concise null-or-empty checks.
   * Quick whitespace removal.
-  * Easy reduction of sequences of identical chars.
+  * Easy shortening of sequences of identical chars.
 
 Please see the [Wiki][github-wiki-url] for a detailed feature overview.
 
