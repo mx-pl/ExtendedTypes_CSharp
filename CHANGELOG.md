@@ -16,6 +16,7 @@
 <details>
   <summary>Table Of Contents</summary>
   <ul>
+    <li><a href="#v_1-2-0">v1.2.0</a></li>
     <li><a href="#v_1-1-0">v1.1.0</a></li>
     <li><a href="#v_1-0-0">v1.0.0</a></li>
     <li><a href="#v_1-0-0_beta">v1.0.0-beta</a></li>
@@ -23,6 +24,35 @@
 </details>
 
 <br/>
+
+<!-- 1.2.0 -->
+## v1.2.0
+<a name="v_1-2-0"></a>
+> 2024-02-06
+
+### Features
+
+* Add extension methods for quick whitespace removal from strings:
+  * `SquashWhiteSpace()`
+  * `Shrink()`.
+* Add extension method `Condense()` for easy compression of sequences of identical chars in strings.
+
+### Testing
+
+* Add unit tests for new string based methods.
+* Refactor TestSuite.
+
+### Package
+
+* On GitHub, move Feature Overview from README to Wiki.
+* Update PackageTags and add PackageReleaseNotes.
+
+<p align="right">
+  <a href="#readme-top">
+    <img src="https://img.shields.io/badge/&#x2191;-back-lightgrey" />
+  </a>
+</p>
+
 
 <!-- 1.1.0 -->
 ## v1.1.0
