@@ -5,6 +5,7 @@
   [changelog-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/blob/main/CHANGELOG.md
   [github-issues-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/issues
   [github-discussions-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/discussions
+  [github-wiki-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/wiki
   [license-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/blob/main/LICENSE
   [nuget-url]: https://www.nuget.org/packages/mx-pl.ExtendedTypes
 
@@ -38,10 +39,6 @@
     </li>
     <li>
       <a href="#features">Features</a>
-      <ul>
-        <li><a href="#boolean">Boolean</a></li>
-        <li><a href="#string">String</a></li>
-      </ul>
     </li>
     <li>
       <a href="#feedback">Feedback</a>
@@ -94,9 +91,9 @@ Published under the `MIT License`. See the full [license file][license-url] for 
 
 This library is published as a [package on NuGet][nuget-url].
 
-* Current release: `1.1.0` *(2024-01-06)*
+* Current release: `1.2.0` *(2024-02-06)*
 
-Information on what is new and on previous releases can be found in the [CHANGELOG][changelog-url]. An overview of current features can be found in the next section.
+Information on what is new and on previous releases can be found in the [CHANGELOG][changelog-url]. An overview of all features currently included can be found [here][github-wiki-url].
 
 <p align="right">
   <a href="#readme-top">
@@ -109,107 +106,22 @@ Information on what is new and on previous releases can be found in the [CHANGEL
 ## Features
 <a name="features"></a>
 
-### Boolean
-<a name="boolean"></a>
+This library provides extension methods for:
 
-This library provides a straightforward way to toggle (i.e. negate the value of) a boolean variable.
+* Boolean
+  * Straightforward toggling.
+* String
+  * Concise null-or-empty checks.
+  * Quick whitespace removal.
+  * Easy reduction of sequences of identical chars.
 
-```C#
-// Let's define a bool variable and set it to true.
-var myBool = true; 
-```
-
-#### Toggle()
-
-The extension method *Toggle()* negates the value of the instance without returning anything.
- 
-```C#
-// Value of 'myBool' is 'true'.
-myBool.Toggle();
-// Value of 'myBool' is 'false'.
-```
-
-#### Toggled()
-
-The extension method *Toggled()* returns the negated value but does not change the variable itself.
-
-```C#
-// Value of 'myBool' is 'true'.
-var result = myBool.Toggled();
-// Value of 'myBool' is still 'true'.
-// Value of 'result' is 'false'.
-```
-
-#### Not()
-
-The extension method *Not()* is simply *an alias for Toggled()* mirroring its behaviour.
-
-```C#
-// Value of 'myBool' is 'true'.
-var result = myBool.Not();
-// Value of 'myBool' is still 'true'.
-// Value of 'result' is 'false'.
-```
+Please see the [Wiki][github-wiki-url] for a detailed feature overview.
 
 <p align="right">
   <a href="#readme-top">
     <img src="https://img.shields.io/badge/&#x2191;-back-lightgrey" />
   </a>
 </p>
-
-
-### String
-<a name="string"></a>
-
-This library provides a concise way for checking whether a string is null or empty.
-
-```C#
-// Suppose we have a string variable.
-var myString = "foo"; 
-```
-
-#### IsNullOrEmpty() and IsNullOrWhiteSpace()
-
-If one wants to check whether a string is null, empty or only consisting of white-space characters, the C# string class does already provide methods for that: *IsNullOrEmpty()* and *IsNullOrWhiteSpace()*.
-
-This library, however, offers these build-in methods as extension methods.
-
-```C#
-// Conventionally, one would check whether the string is empty (or whitespace) like this:
-string.IsNullOrEmpty(myString);
-string.IsNullOrWhiteSpace(myString);
-
-// Using this library's extension methods the statement looks like that:
-myString.IsNullOrEmpty();
-myString.IsNullOrWhiteSpace();
-
-// In each case a boolean value is returned to indicate the answer.
-```
-
-The newly provided methods mirror the behaviour of the pre-existing ones (in fact, internally, they just invoke them).
-
-#### IsNotNullOrEmpty() and IsNotNullOrWhiteSpace()
-
-Additionally, this library offers the negated versions of these methods.
-
-```C#
-// The extension methods ...
-myString.IsNotNullOrEmpty();
-myString.IsNotNullOrWhiteSpace();
-
-// ... are equivalent to:
-!string.IsNullOrEmpty(myString);
-!string.IsNullOrWhiteSpace(myString);
-
-// Again, a boolean value is returned to indicate the result.
-```
-
-<p align="right">
-  <a href="#readme-top">
-    <img src="https://img.shields.io/badge/&#x2191;-back-lightgrey" />
-  </a>
-</p>
-
 
 ## Feedback
 <a name="feedback"></a>
