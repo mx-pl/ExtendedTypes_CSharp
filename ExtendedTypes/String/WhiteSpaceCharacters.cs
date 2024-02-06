@@ -1,6 +1,6 @@
 ﻿/*
  ---------------------------------------------------------------------------
-  Copyright 'c) 2024 mx-pl
+  Copyright (c) 2024 mx-pl
 
   Licensed under the MIT License.
 
@@ -12,7 +12,7 @@
 namespace ExtendedTypes.String
 {
     /// <summary>
-    /// Collection of all chars considered white-space characters.
+    /// Collection of all chars considered whitespace characters.
     /// </summary>
     /// <remarks>Taken from: https://learn.microsoft.com/en-us/dotnet/api/system.char.iswhitespace?view=net-6.0 (as of 2024-01-09).</remarks>
     public static class WhiteSpaceCharacters

@@ -59,7 +59,7 @@ namespace ExtendedTypes.String
         /// <param name="str">The string instance this method is invoked on.</param>
         /// <returns>
         /// A <see cref="string"/> with no leading or trailing whitespace, whose sequences of non-whitespace characters
-        /// are kept apart by single space chars.
+        /// are kept apart by single space <see cref="char"/>s.
         /// </returns>
         public static string Shrink(this string str) => Shrink(str, ' ', true);
 

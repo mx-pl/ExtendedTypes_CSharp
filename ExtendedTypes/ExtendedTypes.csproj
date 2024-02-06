@@ -11,14 +11,18 @@
     <GenerateDocumentationFile>True</GenerateDocumentationFile>
 
     <PackageId>mx-pl.ExtendedTypes</PackageId>
-    <Version>1.1.0</Version>
+    <Version>1.2.0</Version>
     <Authors>mx-pl</Authors>
     <Copyright>Copyright (c) mx-pl 2024</Copyright>
     <PackageLicenseExpression>MIT</PackageLicenseExpression>
     <Title>ExtendedTypes</Title>
     <Product>ExtendedTypes</Product>
     <Description>A small C#/.NET library providing data type based utility methods—mainly for improved readability.</Description>
-    <PackageTags>utility;readability-improvements;bool-negation;string-empty-checks</PackageTags>
+    <PackageTags>readability-improvements;bool-negation;string-empty-checks;whitespace-removal</PackageTags>
+
+    <PackageReleaseNotes>v1.2.0: New extension methods for easy whitespace removal from strings.
+
+For more details on changes and already included features, see the CHANGELOG and Wiki on GitHub.</PackageReleaseNotes>
 
     <PackageProjectUrl>https://github.com/mx-pl/ExtendedTypes_CSharp</PackageProjectUrl>
     <RepositoryUrl>https://github.com/mx-pl/ExtendedTypes_CSharp.git</RepositoryUrl>

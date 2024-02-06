@@ -25,20 +25,20 @@ namespace ExtendedTypes.String
     public static class StringEmptyChecks
     {
         /// <summary>
-        /// Indicates whether the value of this string instance is null or an empty string ("").
+        /// Indicates whether the value of this <see cref="string"/> instance is <see langword="null"/> or an empty string ("").
         /// </summary>
-        /// <returns>true if the string is null or an empty string (""); otherwise, false.</returns>
+        /// <returns><see langword="true"/> if the string is <see langword="null"/> or an empty string (""); otherwise, <see langword="false"/>.</returns>
         public static bool IsNullOrEmpty(this string? str)
         {
             return string.IsNullOrEmpty(str);
         }
 
         /// <summary>
-        /// Indicates whether the value of this string instance is null, empty, or consists only of 
-        /// white-space characters.
+        /// Indicates whether the value of this <see cref="string"/> instance is <see langword="null"/>, empty, or consists only of 
+        /// whitespace characters.
         /// </summary>
         /// <returns>
-        /// true, if the string is null or string.Empty, or if it consists exclusively of white-space characters.
+        /// <see langword="true"/>, if the string is <see langword="null"/> or string.Empty, or if it consists exclusively of whitespace characters.
         /// </returns>
         public static bool IsNullOrWhiteSpace(this string? str)
         {
@@ -46,20 +46,20 @@ namespace ExtendedTypes.String
         }
 
         /// <summary>
-        /// Indicates whether the value of this string instance is not null or an empty string ("").
+        /// Indicates whether the value of this <see cref="string"/> instance is not <see langword="null"/> or an empty string ("").
         /// </summary>
-        /// <returns>true, if the string is neither null nor empty; otherwise, false.</returns>
+        /// <returns><see langword="true"/>, if the string is neither <see langword="null"/> nor empty; otherwise, <see langword="false"/>.</returns>
         public static bool IsNotNullOrEmpty(this string? str)
         {
             return !string.IsNullOrEmpty(str);
         }
 
         /// <summary>
-        /// Indicates whether the value of this string instance is not null, empty, or only consisting of
-        /// white-space characters.
+        /// Indicates whether the value of this <see cref="string"/> instance is not <see langword="null"/>, empty, or only consisting of
+        /// whitespace characters.
         /// </summary>
         /// <returns>
-        /// true, if the string is neither null, empty, nor exclusively consisting of white-space characters; otherwise, false.
+        /// <see langword="true"/>, if the string is neither <see langword="null"/>, empty, nor exclusively consisting of whitespace characters; otherwise, <see langword="false"/>.
         /// </returns>
         public static bool IsNotNullOrWhiteSpace(this string? str)
         {
