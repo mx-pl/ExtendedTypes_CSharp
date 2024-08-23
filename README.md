@@ -3,9 +3,9 @@
 <!-- (urls) -->
 
   [changelog-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/blob/main/CHANGELOG.md
+  [gitbook-url]: https://mx-pl.gitbook.io/ExtendedTypes-Docs
   [github-issues-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/issues
   [github-discussions-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/discussions
-  [github-wiki-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/wiki
   [license-url]: https://github.com/mx-pl/ExtendedTypes_CSharp/blob/main/LICENSE
   [nuget-url]: https://www.nuget.org/packages/mx-pl.ExtendedTypes
 
@@ -15,11 +15,12 @@
     Extended Types (Library)
   </h3>
   <div>
+    <a href="https://mx-pl.gitbook.io/ExtendedTypes-Docs"><img alt="Docs" src="https://img.shields.io/badge/GitBook-Docs-teal?logo=gitbook"/></a>
     <a href="https://www.nuget.org/packages/mx-pl.ExtendedTypes"><img alt="NuGet Version" src="https://img.shields.io/nuget/v/mx-pl.ExtendedTypes?style=flat&logo=nuget&logoColor=blue"></a>
     <a href="https://github.com/mx-pl/ExtendedTypes_CSharp/blob/main/LICENSE"><img alt="GitHub License" src="https://img.shields.io/github/license/mx-pl/ExtendedTypes_CSharp?style=flat"></a>
   </div>
   <p align="center" name="project-description">
-    A small C#/.NET library providing data type based utility methods—mainly for improved readability.
+    A small C#/.NET library providing extension methods for boolean and string data types.
   </p>
 </div>
 
@@ -115,7 +116,7 @@ This library provides extension methods for:
   * Quick whitespace removal.
   * Easy shortening of sequences of identical chars.
 
-Please see the [Wiki][github-wiki-url] for a detailed feature overview.
+Please see the [Docs][gitbook-url] for a detailed feature overview.
 
 <p align="right">
   <a href="#readme-top">
